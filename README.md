@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# React 환경 구성
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 웹 에디터를 이용하는 방법
 
-## Available Scripts
+[CodePen](https://ko.legacy.reactjs.org/redirect-to-codepen/hello-world)  
+[CodeSandbox](https://codesandbox.io/s/new)  
+[Stackblitz](https://stackblitz.com/fork/react)
 
-In the project directory, you can run:
+다음과 같은 웹 에디터상에서 설치 없이 사용이 가능합니다.
 
-### `npm start`
+## 로컬에서 이용하는 방법
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create React App 을 사용해 React 환경 구축을 하기 위해서는 다음과 같은 명령어를 입력하면 됩니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npx create-react-app my-app
+cd my-app
+npm start
+```
 
-### `npm test`
+npx 명령어를 사용하기 위해서는 NodeJS 가 필요합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm start` 를 통해 개발 프리뷰를 확인 할 수 있습니다.
 
-### `npm run build`
+해당 파일에 접근하면 다음과 같은 구조로 되어있습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+├── .gitignore
+├── README.md  
+├── package-lock.json  
+├── package.json  
+├── public  
+│   ├── favicon.ico  
+│   ├── index.html  
+│   ├── logo192.png  
+│   ├── logo512.png  
+│   ├── manifest.json  
+│   └── robots.txt  
+└── src  
+    ├── App.css  
+    ├── App.js  
+    ├── App.test.js  
+    ├── index.css  
+    ├── index.js  
+    ├── logo.svg  
+    ├── reportWebVitals.js  
+    └── setupTests.js  
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 수정
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/index.js가 `npm start` 를 진행하면 실행되며 index.js 파일에서 App.js 자바스크립트 파일을 로드해 사용자에게 출력하는 일을 하고 있습니다.
 
-### `npm run eject`
+index.js 스크립트 파일에서는 public 폴더의 index.html 에서 확인이 가능합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+공통 이미지로 사용되는 요소들은 정적인 파일인 public 폴더에 저장하며,  
+__특정 컴포넌트__ (App.js 와 같이 분리한 것)에만 사용되는 이미지는 src에 저장하는 방법으로 폴더 관리를 할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 배포
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm run build` 명령어를 제출하면 build 라는 폴더가 새롭게 생성되며 public 폴더에 있던 파일들은 변경 없기 복제가 되며,  
+src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 코드를 압축하여 파일의 용량을 줄여 배포 시 무리 없이 원할하게 작동되도록 변환됩니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+빌드한 요소를 웹 서버를 통해 확인하려면 `npx serve -s build` 를 입력하면 build/index.html 파일을 서비스합니다.  
+터미널에 로컬 주소를 확인 할 수 있습니다.

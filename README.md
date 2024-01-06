@@ -68,4 +68,4 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 ## React 활용
 
-[Component 컴포넌트](https://github.com/Hansan529/react-tutorial-2024/Component.md)
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/Component.md" target="_blank" rel="noopener">Component 컴포넌트</a>

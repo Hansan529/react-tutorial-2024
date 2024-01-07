@@ -1,9 +1,16 @@
 function Header(props) {
-  console.log('props: ', props);
   return (
     <header>
       <h1>
-        <a href="/">{props.title}</a>
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            props.onChangeMode();
+          }}
+        >
+          {props.title}
+        </a>
       </h1>
     </header>
   );
@@ -15,18 +22,18 @@ function Nav(props) {
       <ol>
         {props.topics.map((el, idx) => (
           <li key={el.id}>
-            <a href={`/read/${el.id}`}>{el.title}</a>
+            <a
+              id={el.id}
+              href={`/read/${el.id}`}
+              onClick={(event) => {
+                event.preventDefault();
+                props.onChangeMode(event.target.id);
+              }}
+            >
+              {el.title}
+            </a>
           </li>
         ))}
-        <li>
-          <a href="/read/1">html</a>
-        </li>
-        <li>
-          <a href="/read/2">css</a>
-        </li>
-        <li>
-          <a href="/read/3">js</a>
-        </li>
       </ol>
     </nav>
   );
@@ -49,8 +56,13 @@ function App() {
   ];
   return (
     <div>
-      <Header title="props" />
-      <Nav topics={topics} />
+      <Header title="props" onChangeMode={() => alert('Header')} />
+      <Nav
+        topics={topics}
+        onChangeMode={(id) => {
+          alert(id);
+        }}
+      />
       <Article title="Welcome" body="Hello, WEB" />
     </div>
   );

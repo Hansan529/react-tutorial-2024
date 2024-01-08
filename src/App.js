@@ -49,19 +49,59 @@ function Article(props) {
   );
 }
 
+function Create(props) {
+  return (
+    <article>
+      <h2>Create</h2>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          const title = event.target.title.value;
+          const body = event.target.body.value;
+          props.onCreate(title, body);
+        }}
+      >
+        <p>
+          <input type="text" name="title" placeholder="title" />
+        </p>
+        <p>
+          <textarea name="body" placeholder="body"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Create" />
+        </p>
+      </form>
+    </article>
+  );
+}
+
 function App() {
   const [mode, setMode] = useState('WELCOME');
   const [id, setId] = useState(0);
-  const topics = [
+  const [topics, setTopics] = useState([
     { id: 1, title: 'html', body: 'html~~' },
     { id: 2, title: 'css', body: 'css~~' },
     { id: 3, title: 'js', body: 'js~~' },
-  ];
+  ]);
+  const [nextId, setNextId] = useState(topics.length + 1);
   let content = null;
   if (mode === 'WELCOME') {
     content = 'World';
   } else if (mode === 'READ') {
     content = topics[id].body;
+  } else if (mode === 'CREATE') {
+    content = (
+      <Create
+        onCreate={(title, body) => {
+          const newTopic = { id: nextId, title, body };
+          const newTopics = [...topics, newTopic];
+          setTopics(newTopics);
+          setMode('READ');
+          setId(topics.length);
+          setNextId(nextId + 1);
+        }}
+      />
+    );
   }
   return (
     <div>
@@ -74,6 +114,15 @@ function App() {
         }}
       />
       <Article title={mode} body={content} />
+      <a
+        href="/create"
+        onClick={(event) => {
+          event.preventDefault();
+          setMode('CREATE');
+        }}
+      >
+        Create
+      </a>
     </div>
   );
 }

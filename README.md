@@ -75,3 +75,5 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 <a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/event.md" target="_blank" rel="noopener">event 이벤트</a>
 
 <a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/state.md" target="_blank" rel="noopener">state 상태</a>
+
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/create.md" target="_blank" rel="noopener">Create 생성</a>

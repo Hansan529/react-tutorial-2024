@@ -44,7 +44,7 @@ function Article(props) {
   return (
     <article>
       <h2>{props.title}</h2>
-      Hello, {props.body}
+      {props.body}
     </article>
   );
 }
@@ -75,15 +75,69 @@ function Create(props) {
   );
 }
 
+function Update(props) {
+  const [formData, setFormData] = useState({
+    title: props.target.title,
+    body: props.target.body,
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { title, body } = formData;
+    props.topics.forEach((element) => {
+      if (element.id === props.target.id) {
+        element.title = title;
+        element.body = body;
+      }
+    });
+    props.onUpdate(props.topics);
+  };
+
+  return (
+    <article>
+      <form onSubmit={handleSubmit}>
+        <p>
+          <input
+            type="text"
+            name="title"
+            placeholder="title"
+            value={formData.title}
+            onChange={handleInputChange}
+          />
+        </p>
+        <p>
+          <textarea
+            name="body"
+            placeholder="body"
+            value={formData.body}
+            onChange={handleInputChange}
+          ></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Update" />
+        </p>
+      </form>
+    </article>
+  );
+}
+
 function App() {
   const [mode, setMode] = useState('WELCOME');
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(null);
   const [topics, setTopics] = useState([
     { id: 1, title: 'html', body: 'html~~' },
     { id: 2, title: 'css', body: 'css~~' },
     { id: 3, title: 'js', body: 'js~~' },
   ]);
   const [nextId, setNextId] = useState(topics.length + 1);
+  const [target, setTarget] = useState(null);
   let content = null;
   if (mode === 'WELCOME') {
     content = 'World';
@@ -102,6 +156,17 @@ function App() {
         }}
       />
     );
+  } else if (mode === 'UPDATE') {
+    content = (
+      <Update
+        topics={topics}
+        target={target}
+        onUpdate={(newTopics) => {
+          setTopics(newTopics);
+          setMode('READ');
+        }}
+      />
+    );
   }
   return (
     <div>
@@ -114,15 +179,33 @@ function App() {
         }}
       />
       <Article title={mode} body={content} />
-      <a
-        href="/create"
-        onClick={(event) => {
-          event.preventDefault();
-          setMode('CREATE');
-        }}
-      >
-        Create
-      </a>
+      <ul>
+        <li>
+          <a
+            href="/create"
+            onClick={(event) => {
+              event.preventDefault();
+              setMode('CREATE');
+            }}
+          >
+            Create
+          </a>
+        </li>
+        {mode === 'READ' && (
+          <li>
+            <a
+              href={`/update/${id + 1}`}
+              onClick={(event) => {
+                event.preventDefault();
+                setMode('UPDATE');
+                setTarget(topics[id]);
+              }}
+            >
+              Update
+            </a>
+          </li>
+        )}
+      </ul>
     </div>
   );
 }

@@ -192,18 +192,32 @@ function App() {
           </a>
         </li>
         {mode === 'READ' && (
-          <li>
-            <a
-              href={`/update/${id + 1}`}
-              onClick={(event) => {
-                event.preventDefault();
-                setMode('UPDATE');
-                setTarget(topics[id]);
-              }}
-            >
-              Update
-            </a>
-          </li>
+          <>
+            <li>
+              <a
+                href={`/update/${id + 1}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setMode('UPDATE');
+                  setTarget(topics[id]);
+                }}
+              >
+                Update
+              </a>
+            </li>
+            <li>
+              <input
+                type="button"
+                value="Delete"
+                onClick={() => {
+                  const copyTopics = [...topics];
+                  const newTopics = copyTopics.filter((el) => el.id !== id + 1);
+                  setTopics(newTopics);
+                  setMode('WELCOME');
+                }}
+              />
+            </li>
+          </>
         )}
       </ul>
     </div>

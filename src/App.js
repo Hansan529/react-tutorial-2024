@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Header(props) {
   return (
@@ -41,6 +41,9 @@ function Nav(props) {
 }
 
 function Article(props) {
+  useEffect(() => {
+    console.log('props', props);
+  }, props);
   return (
     <article>
       <h2>{props.title}</h2>
@@ -129,6 +132,7 @@ function Update(props) {
 }
 
 function App() {
+  const [headerTitle, setHeaderTitle] = useState('props');
   const [mode, setMode] = useState('WELCOME');
   const [id, setId] = useState(null);
   const [topics, setTopics] = useState([
@@ -138,6 +142,7 @@ function App() {
   ]);
   const [nextId, setNextId] = useState(topics.length + 1);
   const [target, setTarget] = useState(null);
+
   let content = null;
   if (mode === 'WELCOME') {
     content = 'World';
@@ -170,7 +175,7 @@ function App() {
   }
   return (
     <div>
-      <Header title="props" onChangeMode={() => setMode('WELCOME')} />
+      <Header title={headerTitle} onChangeMode={() => setMode('WELCOME')} />
       <Nav
         topics={topics}
         onChangeMode={(_id) => {

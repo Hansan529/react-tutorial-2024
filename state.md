@@ -104,3 +104,32 @@ function App() {
   );
 }
 ```
+
+state 값에 따라서 컴포넌트가 렌더가 될 지, 안 될지 선택 가능합니다.
+
+```jsx
+function True() {
+  return (
+    <div>True</div>
+  )
+}
+
+function False() {
+  return (
+    <div>False</div>
+  )
+}
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  return (
+    <div>
+      {isLoggedIn ? <True /> : <False />}
+      {isLoggedIn && <True />}
+    </div>
+  )
+}
+```
+
+1. isLoggedIn 상태값이 true일 경우, `<True />` 컴포넌트를 불러오며, 만약 false이면 `<False />` 컴포넌트를 불러옵니다.  
+2. isLoggedIn 상태값이 true일 경우에만 `<True />` 컴포넌트를 불러옵니다.

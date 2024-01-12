@@ -83,3 +83,11 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 <a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/delete.md" target="_blank" rel="noopener">Delete 제거</a>
 
 <a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/useEffect.md" target="_blank" rel="noopener">useEffect</a>
+
+--
+
+## React 상태 관리 라이브러리
+
+Redux, Recoil, Zustand, Jotai, Valtio, React-query
+
+서버 상태 관리는 React Query, 로컬 상태는 Zustand + immer 라이브러리가 이상적인 것 같은 개인적인 의견입니다.

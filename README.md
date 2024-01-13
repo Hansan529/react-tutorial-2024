@@ -86,6 +86,76 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 --
 
+## React Css-in-JS
+
+스타일을 적용시키는 방법 중 하나이며, 이를 선호합니다.
+
+왜냐하면 CSS 파일로 적용을 시키려면, 이를 모듈화를 하여 JS와 CSS간의 연결 작업을 해주어야 하며 개인적으로는 번거롭다고 생각합니다.
+
+대표적으로 styled-components, emotion 이 있습니다.  
+두 방식의 차이는 크게 나지 않으며 사용자의 취향에 따라 원하는 라이브러리를 사용하면 됩니다.
+
+### styled-components
+
+styled-components의 경우 컴포넌트 형식으로 스타일을 구성할 수 있습니다.
+
+```jsx
+import styled from "styled-components";
+
+const Title = styled.h1`
+    font-size: 32px;
+    text-align: center;
+`;
+
+function App() {
+    return (
+        <Title>Hello</Title>
+    )
+}
+```
+
+다음과 같은 방식으로 작성됩니다.
+
+### emotion
+
+```jsx
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react"
+
+const divStyle = css`
+    background-color: skyblue;
+    font-size: 24px;
+    text-align: center;
+`
+
+function App() {
+    return (
+        <div css={divStyle}>Hello</div>
+    )
+}
+```
+
+해당 스타일이 적용된 HTML DOM을 구분하기 쉽다는 점이 장점같습니다.
+
+emotion 에서도 styled-components와 같이 적용시킬 수 있습니다.  
+@emotion/styled 라이브러리를 사용하면 됩니다.
+
+```jsx
+import styled from '@emotion/styled'
+
+const Container = styled.div`
+    background-color: red;
+`
+
+function App() {
+    return (
+        <Container>Hello</Container>
+    )
+}
+```
+
+--
+
 ## React 상태 관리 라이브러리
 
 Redux, Recoil, Zustand, Jotai, Valtio, React-query

@@ -68,21 +68,21 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 ## React 활용
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/Component.md" target="_blank" rel="noopener">Component 컴포넌트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Component 컴포넌트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/props.md" target="_blank" rel="noopener">props 프롭</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">props 프롭</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/event.md" target="_blank" rel="noopener">event 이벤트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">event 이벤트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/state.md" target="_blank" rel="noopener">state 상태</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">state 상태</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/create.md" target="_blank" rel="noopener">Create 생성</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Create 생성</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/update.md" target="_blank" rel="noopener">Update 업데이트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Update 업데이트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/delete.md" target="_blank" rel="noopener">Delete 제거</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Delete 제거</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/useEffect.md" target="_blank" rel="noopener">useEffect</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">useEffect</a>
 
 --
 
@@ -161,3 +161,7 @@ function App() {
 Redux, Recoil, Zustand, Jotai, Valtio, React-query
 
 서버 상태 관리는 React Query, 로컬 상태는 Zustand + immer 라이브러리가 이상적인 것 같은 개인적인 의견입니다.
+
+Redux의 점유율이 가장 높지만 보일러 플레이트를 많이 준비해야 한 다는 점이 단점입니다
+
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Zustand</a>

@@ -1,5 +1,18 @@
 # React 환경 구성
 
+## 목표
+
+## 설정
+- React-create-app (CSR)
+- Typescript (타입 지정)
+- NextJS (SSR)
+
+### 라이브러리
+- 상태관리 라이브러리 (recoil, zustand ...)
+- 스타일시트 라이브러리 (emotion & styled-components)
+
+---
+
 ## 웹 에디터를 이용하는 방법
 
 [CodePen](https://ko.legacy.reactjs.org/redirect-to-codepen/hello-world)  

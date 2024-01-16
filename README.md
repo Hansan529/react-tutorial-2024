@@ -97,7 +97,7 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 <a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">useEffect</a>
 
---
+---
 
 ## React Css-in-JS
 
@@ -167,7 +167,7 @@ function App() {
 }
 ```
 
---
+---
 
 ## React 상태 관리 라이브러리
 

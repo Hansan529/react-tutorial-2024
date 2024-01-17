@@ -81,21 +81,23 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 ## React 활용
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Component 컴포넌트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/Component.md" target="_blank" rel="noopener">Component 컴포넌트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">props 프롭</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/props.md" target="_blank" rel="noopener">props 프롭</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">event 이벤트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/event.md" target="_blank" rel="noopener">event 이벤트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">state 상태</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/state.md" target="_blank" rel="noopener">state 상태</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Create 생성</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/create.md" target="_blank" rel="noopener">Create 생성</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Update 업데이트</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/update.md" target="_blank" rel="noopener">Update 업데이트</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">Delete 제거</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/delete.md" target="_blank" rel="noopener">Delete 제거</a>
 
-<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/zustand.md" target="_blank" rel="noopener">useEffect</a>
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/useEffect.md" target="_blank" rel="noopener">useEffect</a>
+
+<a href="https://github.com/Hansan529/react-tutorial-2024/blob/main/markdown/reactRouter.md" target="_blank" rel="noopener">react-router-dom</a>
 
 ---
 

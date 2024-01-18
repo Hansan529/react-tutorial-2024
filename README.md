@@ -114,7 +114,7 @@ src 폴더에 존재하던 파일들은 불필요한 요소들은 제거하고 �
 
 styled-components의 경우 컴포넌트 형식으로 스타일을 구성할 수 있습니다.
 
-```jsx
+```js
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -133,7 +133,7 @@ function App() {
 
 ### emotion
 
-```jsx
+```js
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
 
@@ -155,7 +155,7 @@ function App() {
 emotion 에서도 styled-components와 같이 적용시킬 수 있습니다.  
 @emotion/styled 라이브러리를 사용하면 됩니다.
 
-```jsx
+```js
 import styled from '@emotion/styled'
 
 const Container = styled.div`

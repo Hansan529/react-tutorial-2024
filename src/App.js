@@ -1,4 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import { useEffect, useState } from 'react';
+import { css } from '@emotion/react';
 
 function Header(props) {
   return (

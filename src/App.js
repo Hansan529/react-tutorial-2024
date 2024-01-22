@@ -4,7 +4,11 @@ import { css } from '@emotion/react';
 
 function Header(props) {
   return (
-    <header>
+    <header
+      css={css`
+        background-color: yellow;
+      `}
+    >
       <h1>
         <a
           href="/"

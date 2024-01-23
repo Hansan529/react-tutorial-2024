@@ -2,15 +2,21 @@
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 
+const baseBgColor = 'skyblue';
+const baseTxtColor = 'white';
+
 function Header(props) {
   return (
     <header
       css={css`
-        background-color: yellow;
+        background-color: ${baseBgColor};
       `}
     >
       <h1>
         <a
+          css={css`
+            color: ${baseTxtColor};
+          `}
           href="/"
           onClick={(e) => {
             e.preventDefault();

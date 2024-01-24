@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Product from './Product';
 
 const baseBgColor = 'skyblue';
 const baseTxtColor = 'white';
@@ -187,56 +189,63 @@ function App() {
   }
   return (
     <div>
-      <Header title={headerTitle} onChangeMode={() => setMode('WELCOME')} />
-      <Nav
-        topics={topics}
-        onChangeMode={(_id) => {
-          setMode('READ');
-          setId(_id);
-        }}
-      />
-      <Article title={mode} body={content} />
-      <ul>
-        <li>
-          <a
-            href="/create"
-            onClick={(event) => {
-              event.preventDefault();
-              setMode('CREATE');
-            }}
-          >
-            Create
-          </a>
-        </li>
-        {mode === 'READ' && (
-          <>
-            <li>
-              <a
-                href={`/update/${id + 1}`}
-                onClick={(event) => {
-                  event.preventDefault();
-                  setMode('UPDATE');
-                  setTarget(topics[id]);
-                }}
-              >
-                Update
-              </a>
-            </li>
-            <li>
-              <input
-                type="button"
-                value="Delete"
-                onClick={() => {
-                  const copyTopics = [...topics];
-                  const newTopics = copyTopics.filter((el) => el.id !== id + 1);
-                  setTopics(newTopics);
-                  setMode('WELCOME');
-                }}
-              />
-            </li>
-          </>
-        )}
-      </ul>
+      <Router>
+        <Routes>
+          <Route path="/product/*" element={<Product />}></Route>
+        </Routes>
+        <Header title={headerTitle} onChangeMode={() => setMode('WELCOME')} />
+        <Nav
+          topics={topics}
+          onChangeMode={(_id) => {
+            setMode('READ');
+            setId(_id);
+          }}
+        />
+        <Article title={mode} body={content} />
+        <ul>
+          <li>
+            <a
+              href="/create"
+              onClick={(event) => {
+                event.preventDefault();
+                setMode('CREATE');
+              }}
+            >
+              Create
+            </a>
+          </li>
+          {mode === 'READ' && (
+            <>
+              <li>
+                <a
+                  href={`/update/${id + 1}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    setMode('UPDATE');
+                    setTarget(topics[id]);
+                  }}
+                >
+                  Update
+                </a>
+              </li>
+              <li>
+                <input
+                  type="button"
+                  value="Delete"
+                  onClick={() => {
+                    const copyTopics = [...topics];
+                    const newTopics = copyTopics.filter(
+                      (el) => el.id !== id + 1
+                    );
+                    setTopics(newTopics);
+                    setMode('WELCOME');
+                  }}
+                />
+              </li>
+            </>
+          )}
+        </ul>
+      </Router>
     </div>
   );
 }

@@ -26,3 +26,5 @@ const app = () => {
 ```
 
 라우팅 할 컴포넌트를 **BrowserRouter** 컴포넌트(Router로 별명 설정)가 최상위 태그로 감싸게 되며 하나의 라우터만 사용해야합니다.  
+
+해당 경로에 접근할 경우 설정한 component가 유저에게 보여지게 됩니다. `http://localhost:3000/about` 인 경우 About 컴포넌트가 보입니다.

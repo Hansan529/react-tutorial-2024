@@ -3,34 +3,11 @@ import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Product from './Product';
+import Header from './components/Header';
 
-const baseBgColor = 'skyblue';
-const baseTxtColor = 'white';
+export const baseBgColor = 'skyblue';
+export const baseTxtColor = 'white';
 
-function Header(props) {
-  return (
-    <header
-      css={css`
-        background-color: ${baseBgColor};
-      `}
-    >
-      <h1>
-        <a
-          css={css`
-            color: ${baseTxtColor};
-          `}
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            props.onChangeMode();
-          }}
-        >
-          {props.title}
-        </a>
-      </h1>
-    </header>
-  );
-}
 
 function Nav(props) {
   return (

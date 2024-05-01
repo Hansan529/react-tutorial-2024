@@ -44,3 +44,42 @@ function Controls() {
     return <button onClick={increasePopulation}>one up</button>
 }
 ```
+
+Store에 저장을 하여도, 새로고침을 하면 해당 데이터가 기본값으로 초기화되는 데, 이를 새로고침 후에도 기존의 데이터를 유지하고자 할려면 persist 미들웨어를 사용한다.
+
+```js
+// useStore.js
+import { persist } from "zustand/middleware";
+
+const useStore = create(
+    persist((set) => ({
+        data: null,
+        text: null,
+
+        dataChange: (value) => set(() => ({[data]: value})),
+    }),
+    {
+        name: 'cache',
+    })
+);
+
+export default useStore;
+```
+
+```js
+// index.js
+import useStore from "./useStore";
+
+function App() {
+    const { data, text, dataChange } = useState(state => state);
+
+    return (
+        <div>
+            <button onClick={() => dataChange('abc')}>abc</button>
+        </div>
+    )
+}
+```
+
+버튼을 클릭하면, useStore의 data 타겟이 'abc' 로 변하게 되며, 해당 데이터는 localStorage에 'cache' key 값을 갖고 저장된다.
+

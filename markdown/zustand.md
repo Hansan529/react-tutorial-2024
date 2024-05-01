@@ -56,7 +56,7 @@ const useStore = create(
         data: null,
         text: null,
 
-        dataChange: (value) => set(() => ({[data]: value})),
+        dataChange: (value) => set(() => ({ data: value })),
     }),
     {
         name: 'cache',
@@ -82,4 +82,30 @@ function App() {
 ```
 
 버튼을 클릭하면, useStore의 data 타겟이 'abc' 로 변하게 되며, 해당 데이터는 localStorage에 'cache' key 값을 갖고 저장된다.
+
+해당 로컬 스토리지 값을 제거하려면 `useStore.persist.clearStorage()` 옵션을 사용하면 된다.
+
+### `name`
+
+필수 조건이며 로컬 스토리지의 key 값에 해당한다.
+
+### `storage`
+
+default: localstorage 기본값이 로컬 스토리지이다.
+
+```js
+import { persist, createJSONStorage } from 'zustand/middleware';
+
+export const useStore = create(
+    persist((set) => ({
+        // ...
+    })),
+    {
+        // ...
+        storage: createJSONStorage(() => sessionStorage),
+    }
+)
+```
+
+세션 스토리지에 저장하고자 하면 다음과 같이 createJSONStroage를 사용하면 된다.
 
